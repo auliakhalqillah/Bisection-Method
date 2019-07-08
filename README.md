@@ -6,7 +6,7 @@ In this package have two files:
 2. bisectionPlot.m (Matlab)
 
 # How to use?
-I use function of f(x) = 2^2+2x+1 to find root using bisection method. As we know, these funtion has root of -1 (solving by factorization mathematically). I use initial boundari is -3, final boundary is 3, and step data point is 0.1. If you success run the Bisetion.f95 program, you will see the result as follows:
+I use function of f(x) = x^2+2x+1 to find root using bisection method. As we know, these funtion has root of -1 (solving by factorization mathematically). I use initial boundari is -3, final boundary is 3, and step data point is 0.1. If you success run the Bisetion.f95 program, you will see the result as follows:
  
            1   0.00000000       1.00000000             Infinity %
            2 -0.500000000      0.250000000       100.000000     %
