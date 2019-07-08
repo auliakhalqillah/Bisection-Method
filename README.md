@@ -7,31 +7,6 @@ In this package have two files:
 
 # How to use?
 I use function of f(x) = 2^2+2x+1 to find root using bisection method. As we know, these funtion has root of -1 (solving by factorization mathematically). I use initial boundari is -3, final boundary is 3, and step data point is 0.1. If you success run the Bisetion.f95 program, you will see the result as follows:
-
-==========================================================================
-                      BISECTION PROGRAM (FINDING ROOT)             
- ==========================================================================
- 
-INSERT INITIAL BOUNDARY:-3
-INSERT FINAL BOUNDARY:3
-INSERT STEP DATA POINT (EX: 0.1):0.1
- ==========================================================================
- 
- > ROOT IS NOT FOUND, BECAUSE f(a)*f(b) > 0. DO NEW ITERATION!!!
- 
- ITER:           1 | INITIAL BOUNDARY:  -2.00000000     | FINAL BOUNDARY:   2.00000000    
- 
- ==========================================================================
- 
- > ROOT IS NOT FOUND, BECAUSE f(a)*f(b) > 0. DO NEW ITERATION!!!
- 
- ITER:           2 | INITIAL BOUNDARY:  -1.00000000     | FINAL BOUNDARY:   1.00000000    
- 
- 
- Fisrt Column: Index
- Second Column: Root
- Third Column: F(c)
- Fourth Column: Error
  
            1   0.00000000       1.00000000             Infinity %
            2 -0.500000000      0.250000000       100.000000     %
