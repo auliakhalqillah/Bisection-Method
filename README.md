@@ -1,76 +1,19 @@
 # Bisection-Method
-Bisection method is one of bracketing methods for finding root. This program has been implemented in Fortran 95 program and make sure you have the Fortran 95 compiler in your computer.
+Bisection method is one of bracketing methods for finding root of the function. This program has been implemented in Fortran 95 program and make sure you have the Fortran 95 compiler in your computer.
 # The Package
 In this package have two files:
 1. Bisection.f95
 2. bisectionPlot.m (Matlab)
-
 # How to use?
-I use function of f(x) = x^2+2x+1 to find root using bisection method. As we know, these funtion has root of -1 (solving by factorization mathematically). I use initial boundari is -3, final boundary is 3, and step data point is 0.1. If you success run the Bisetion.f95 program, you will see the result as follows:
- 
-           1   0.00000000       1.00000000             Infinity %
-           2 -0.500000000      0.250000000       100.000000     %
-           3 -0.750000000       6.25000000E-02   33.3333359     %
-           4 -0.875000000       1.56250000E-02   14.2857151     %
-           5 -0.937500000       3.90625000E-03   6.66666698     %
-           6 -0.968750000       9.76562500E-04   3.22580624     %
-           7 -0.984375000       2.44140625E-04   1.58730173     %
-           8 -0.992187500       6.10351562E-05  0.787401557     %
-           9 -0.996093750       1.52587891E-05  0.392156899     %
-          10 -0.998046875       3.81469727E-06  0.195694715     %
-          11 -0.999023438       9.53674316E-07   9.77517068E-02 %
-          12 -0.999511719       2.38418579E-07   4.88519780E-02 %
-          13 -0.999755859       5.96046448E-08   2.44200267E-02 %
-          14 -0.999877930       0.00000000       1.22085214E-02 %
-          15 -0.999938965       0.00000000       6.10388815E-03 %
-          16 -0.999969482       0.00000000       3.05185094E-03 %
-          17 -0.999984741       0.00000000       1.52590219E-03 %
-          18 -0.999992371       0.00000000       7.62945274E-04 %
-          19 -0.999996185       0.00000000       3.81471182E-04 %
-          20 -0.999998093       0.00000000       1.90735227E-04 %
-          21 -0.999999046       0.00000000       9.53675190E-05 %
-          22 -0.999999523       0.00000000       4.76837376E-05 %
-          23 -0.999999762       0.00000000       2.38418634E-05 %
-          24 -0.999999881       0.00000000       1.19209308E-05 %
-          25 -0.999999940       0.00000000       5.96046539E-06 %
-          26  -1.00000000       0.00000000       0.00000000     %
-          27  -1.00000000       0.00000000       0.00000000     %
-          28  -1.00000000       0.00000000       0.00000000     %
-          29  -1.00000000       0.00000000       0.00000000     %
-          30  -1.00000000       0.00000000       0.00000000     %
-          31  -1.00000000       0.00000000       0.00000000     %
-          32  -1.00000000       0.00000000       0.00000000     %
-          33  -1.00000000       0.00000000       0.00000000     %
-          34  -1.00000000       0.00000000       0.00000000     %
-          35  -1.00000000       0.00000000       0.00000000     %
-          36  -1.00000000       0.00000000       0.00000000     %
-          37  -1.00000000       0.00000000       0.00000000     %
-          38  -1.00000000       0.00000000       0.00000000     %
-          39  -1.00000000       0.00000000       0.00000000     %
-          40  -1.00000000       0.00000000       0.00000000     %
-          41  -1.00000000       0.00000000       0.00000000     %
-          42  -1.00000000       0.00000000       0.00000000     %
-          43  -1.00000000       0.00000000       0.00000000     %
-          44  -1.00000000       0.00000000       0.00000000     %
-          45  -1.00000000       0.00000000       0.00000000     %
-          46  -1.00000000       0.00000000       0.00000000     %
-          47  -1.00000000       0.00000000       0.00000000     %
-          48  -1.00000000       0.00000000       0.00000000     %
-          49  -1.00000000       0.00000000       0.00000000     %
-          50  -1.00000000       0.00000000       0.00000000     %
-          51  -1.00000000       0.00000000       0.00000000     %
-          52  -1.00000000       0.00000000       0.00000000     %
-          53  -1.00000000       0.00000000       0.00000000     %
-          54  -1.00000000       0.00000000       0.00000000     %
-          55  -1.00000000       0.00000000       0.00000000     %
-          56  -1.00000000       0.00000000       0.00000000     %
-          57  -1.00000000       0.00000000       0.00000000     %
-          58  -1.00000000       0.00000000       0.00000000     %
-          59  -1.00000000       0.00000000       0.00000000     %
-          60  -1.00000000       0.00000000       0.00000000     %
-          
-Finally, you get the root is -1. The result will be stored in bisection.txt automatically.If you want to try with another funtion, you can change the function in Bisection.f95 file (line 76).
+I use function of f(x) = x^2+2x+1 to find root using bisection method. As we know, these funtion has root of -1 (solving by factorization in mathematically). 
+
+There are three parameters input have to set:
+ - Initial Boundary = -3
+ - Final Boundary = 3
+ - Data Length = 100
+
+The program has been written for detecting the root of the function automatically. So, you can input whatever the boundary values are. Remember, Initial Boundary always more less than Final Boundary.
 
 To plot the result, you can use bisectionPlot.m file (Matlab). Finally, the bisection plot like in bisection.png 
-
-
+# Contact
+For more information, email: auliakhalqillah.mail@gmail.com
