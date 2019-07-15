@@ -14,6 +14,8 @@ There are three parameters input have to set:
 
 The program has been written for detecting the root of the function automatically. So, you can input whatever the boundary values are. Remember, Initial Boundary always more less than Final Boundary.
 
-To plot the result, you can use bisectionPlot.m file (Matlab). Finally, the bisection plot like in bisection.png 
+To plot the result, you can use bisectionPlot.m file (Matlab). Finally, you can find the result in figure bisection.png 
 # Contact
 For more information, email: auliakhalqillah.mail@gmail.com
+# Material Source
+Steven C. Chapra and Raymond P. Canale, Numerical Methods for Engineers, Sixth Edition
