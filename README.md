@@ -16,6 +16,6 @@ The program has been written for detecting the root of the function automaticall
 
 To plot the result, you can use bisectionPlot.m file (Matlab). Finally, you can find the result in figure bisection.png 
 # Contact
-For more information, email: auliakhalqillah.mail@gmail.com
+Email: auliakhalqillah.mail@gmail.com
 # Material Source
-Steven C. Chapra and Raymond P. Canale, Numerical Methods for Engineers, Sixth Edition
+[Julan Hernadi,2012,Matematika Numerik dengan Implementasi Matlab](http://andipublisher.com/produk-1012004497-matematika-numerik-dengan-implementasi-m.html)
