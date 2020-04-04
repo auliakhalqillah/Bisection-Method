@@ -1,6 +1,6 @@
-# Bisection-Method
+# Bisection Method
 Bisection method is one of bracketing methods for solving root of the function.
-# How to use?
+# Usage
 I use function of ![f(x) = x^2+2x+1](https://i.upmath.me/svg/f(x)%20%3D%20x%5E2%2B2x%2B1) to find root using bisection method. As we know, these funtion has root of -1 (solving by factorization in mathematically). 
 
 There are three parameters input:
