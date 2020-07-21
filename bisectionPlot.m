@@ -5,22 +5,22 @@
 % By: Aulia Khalqillah,S.Si (2019)
 
 % Numerical Bisection
-data = load('bisection.txt');
-root = data(:,2);
-root = root(end);
-fn = data(:,3);
-fn = fn(end);
-
-% Function
-x = -3:0.1:3;
-f = x.^2 + 2*x + 1;
-
-plot(x,f,'r','linewidth',2)
-hold on
-plot([root root],[fn fn],'.b','markersize',30)
-legend('Function','Numerical Bisection','location','NorthWest')
-title('FINDING ROOT USING BISECTION METHOD')
-xlabel('X')
-ylabel('Function')
+clear;clc;
+xi = -3;
+xf = 3;
+n = 100;
+% root from bisection method
+root = -1.00024414;
+deltax = (xf-xi)/n;
+xaxis = [xi:deltax:xf];
+f = (xaxis.^2)+(2*xaxis)+1;
+froot = (root^2)+(2*root)+1;
+plot(xaxis,f)
+hold on;
+plot([root root],[froot froot],'.r','markersize',10)
+xlabel('x')
+ylabel('f(x)')
+title('Finding Root-Bisection Method')
 text(-2.5,12,'f = x^2+2*x+1', 'fontsize', 20)
 grid minor
+print -dpng some_name.png;
