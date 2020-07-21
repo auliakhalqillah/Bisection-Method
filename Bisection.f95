@@ -85,7 +85,7 @@ end program
     implicit none
     real::x
     ! f = (x**2)-16
-    f = (x**2)+(2*x)+1
+    f = (x**2)-(2*x)+1
     ! f = (x**3) - (x**2) - (10*x) + 2
   end
   
