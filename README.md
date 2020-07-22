@@ -9,7 +9,7 @@ By using `xr`, check the condition:
 2. if `f(xi)*x(xr) > 0`, then the xi = xr,
 3. if `f(xi)*x(xr) = 0`, then the xr = xr
 
-The result will stop when the f(xr) is close to 0.
+The process will stop when the f(xr) is close to 0.
 # Example
 Solve a equation of ![f(x) = x^2+2x+1](https://i.upmath.me/svg/f(x)%20%3D%20x%5E2%2B2x%2B1) to find root by using bisection method! As we know, this funtion has root of -1 (solving by factorization in mathematically). 
 
