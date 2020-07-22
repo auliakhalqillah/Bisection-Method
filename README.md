@@ -1,5 +1,5 @@
 # Bisection Method
-Bisection method is one of bracketing methods for solving root of the function. The root is laying in range [xi,xf], where xi is initial boundari and xf is final boundary of roots estimation. The idea of bisection method is, by using the range of these boundary, if `f(xi)*f(xr) < 0` that means the roots are in range of [xi,xf]. Otherwise, if `f(xi)*f(xf) > 0` that means the roots are not in these range and you have to input another value of range roots approximation. Then, to get the roots approximation, you have to calculate the middle point of [xi,xf] by using
+Bisection method is one of bracketing methods for solving roots of the function. The root is laying in range [xi,xf], where xi is initial boundary and xf is final boundary of roots estimation. The idea of bisection method is, by using the range of these boundary, if `f(xi)*f(xf) < 0` that means the roots are in range of [xi,xf]. Otherwise, if `f(xi)*f(xf) > 0` that means the roots are not in these range and you have to input another value of range roots approximation. Then, to get the roots approximation, you have to calculate the middle point of [xi,xf] by using
 
 ![middle_equation](https://i.upmath.me/svg/xr%20%3D%20%7B(x_i%2Bx_f)%5Cover2%7D)
 
