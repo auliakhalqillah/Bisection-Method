@@ -3,7 +3,7 @@
 ! gfortran -o bisection Bisection.o
 !
 ! The program is open source and can use to numeric study purpose.
-! The program was build by Aulia Khalqillah,S.Si
+! The program was build by Aulia Khalqillah,S.Si.,M.Si
 !
 ! email: auliakhalqillah.mail@gmail.com
 ! ==============================================================================
@@ -38,15 +38,18 @@ open(20, file='bisection.txt', status='replace')
             xf = xf - 1
             check = f(xi) * f(xf)
         end if
+        print*, xi, xf
     end do
 
     iter = 1
-    xrold = 0.0
+    xrold = xi
     xr = (xi+xf)/2
     er = abs((xr-xrold)/xrold)
-    
+    condition = 0
     write(*,fmt)"ITER","Xi","Xf","F(Xi)","F(Xf)","XROLD","XR[ROOT]","F(XR)","ERROR","CONDITION"
-    do while (er > limit .or. isnan(er))      
+    do while (er > limit .or. isnan(er))
+        write(*,*) iter,xi,xf,f(xi),f(xf),xrold,xr,f(xr),er,condition
+        write(20,*) iter,xi,xf,f(xi),f(xf),xrold,xr,f(xr),er,condition      
         if ((f(xi)*f(xr)) < 0) then
             xf = xr
             xrold = xr
@@ -72,20 +75,16 @@ open(20, file='bisection.txt', status='replace')
             er = abs((xr-xrold)/xrold)
             condition = 3
         end if
-
-        write(*,*) iter,xi,xf,f(xi),f(xf),xrold,xr,f(xr),er,condition
-        write(20,*) iter,xi,xf,f(xi),f(xf),xrold,xr,f(xr),er,condition
-
         iter = iter + 1
     end do
 close(20)
 end program
   
-  real function f(x)
-    implicit none
-    real::x
-    ! f = (x**2)-16
-    f = (x**2)-(2*x)+1
-    ! f = (x**3) - (x**2) - (10*x) + 2
-  end
+function f(x)
+implicit none
+real::x,f
+! f = (x**2)-16
+f = (x**2)-(2*x)+1
+! f = (x**3) - (x**2) - (10*x) + 2
+end
   
