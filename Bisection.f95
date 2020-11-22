@@ -10,6 +10,7 @@
 program bisection_method
 implicit none
 real :: xi,xf,xr,error,xrold,f,check,limitrange,limiterror
+real :: start, finish
 integer :: iter, condition
 character(len=100) :: fmt
 
@@ -26,6 +27,7 @@ read*, xf
 fmt = "(a12,a13,a13,a20,a13,a17,a20,a17,a17,a20)"
 write(*,*)""
 
+call cpu_time(start)
 limitrange = 1e12
 limiterror = 1e-10
 open(20, file='bisection.txt', status='replace')
@@ -82,6 +84,8 @@ open(20, file='bisection.txt', status='replace')
         iter = iter + 1
     end do
 close(20)
+call cpu_time(finish)
+print '("Time = ",f6.3," seconds.")',finish-start
 end program
   
 function f(x)
