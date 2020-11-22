@@ -9,7 +9,7 @@
 ! ==============================================================================
 program bisection_method
 implicit none
-real :: xi,xf,xr,er,xrold,f,check,limrange,limit
+real :: xi,xf,xr,error,xrold,f,check,limitrange,limiterror
 integer :: iter, condition
 character(len=100) :: fmt
 
@@ -26,12 +26,13 @@ read*, xf
 fmt = "(a12,a13,a13,a20,a13,a17,a20,a17,a17,a20)"
 write(*,*)""
 
-limrange = 1e12
-limit = 1e-10
+limitrange = 1e12
+limiterror = 1e-10
 open(20, file='bisection.txt', status='replace')
     check = f(xi)*f(xf)
+    ! Automatic change boundary if the f(xi)*f(xf) > 0
     do while (check > 0)
-        if (check > limrange) then
+        if (check > limitrange) then
             xi = xi + 1
             check = f(xi) * f(xf)
         else
@@ -40,41 +41,44 @@ open(20, file='bisection.txt', status='replace')
         end if
         print*, xi, xf
     end do
-
+    ! Start root calculation
     iter = 1
     xrold = xi
     xr = (xi+xf)/2
-    er = abs((xr-xrold)/xrold)
+    error = abs((xr-xrold)/xrold)
     condition = 0
     write(*,fmt)"ITER","Xi","Xf","F(Xi)","F(Xf)","XROLD","XR[ROOT]","F(XR)","ERROR","CONDITION"
-    do while (er > limit .or. isnan(er))
-        write(*,*) iter,xi,xf,f(xi),f(xf),xrold,xr,f(xr),er,condition
-        write(20,*) iter,xi,xf,f(xi),f(xf),xrold,xr,f(xr),er,condition      
+    do while (error > limiterror .or. isnan(error))
+        ! write the result on terminal and save to the file
+        write(*,*) iter,xi,xf,f(xi),f(xf),xrold,xr,f(xr),error,condition
+        write(20,*) iter,xi,xf,f(xi),f(xf),xrold,xr,f(xr),error,condition      
+        ! Check first condition of bisection method
         if ((f(xi)*f(xr)) < 0) then
             xf = xr
             xrold = xr
             xr = (xi+xf)/2
-            er = abs((xr-xrold)/xrold)
+            error = abs((xr-xrold)/xrold)
             condition = 1
+        ! Check second condition of bisection method
         elseif ((f(xi)*f(xr)) > 0) then
             xi = xr
             xrold = xr
             xr = (xi+xf)/2
-            er = abs((xr-xrold)/xrold)
+            error = abs((xr-xrold)/xrold)
             condition = 2
+        ! Check third condition of bisection method
         elseif (f(xi)*f(xr) == 0) then
             xr = xr
-
             if (f(xr) == 0) then
                 xr = xr
             else
                 xr = xi
             endif
-            
             xrold = xr
-            er = abs((xr-xrold)/xrold)
+            error = abs((xr-xrold)/xrold)
             condition = 3
         end if
+        ! Do the netx iteration
         iter = iter + 1
     end do
 close(20)
