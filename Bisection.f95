@@ -8,6 +8,7 @@
 ! email: auliakhalqillah.mail@gmail.com
 ! ==============================================================================
 program bisection_method
+
 implicit none
 real :: xi,xf,xr,error,xrold,f,check,limitrange,limiterror
 real :: start, finish
@@ -47,7 +48,7 @@ open(20, file='bisection.txt', status='replace')
     iter = 1
     xrold = xi
     xr = (xi+xf)/2
-    error = abs((xr-xrold)/xrold)
+    error = abs((xr-xrold)/xr) * 100
     condition = 0
     write(*,fmt)"ITER","Xi","Xf","F(Xi)","F(Xf)","XROLD","XR[ROOT]","F(XR)","ERROR","CONDITION"
     do while (error > limiterror .or. isnan(error))
@@ -59,14 +60,14 @@ open(20, file='bisection.txt', status='replace')
             xf = xr
             xrold = xr
             xr = (xi+xf)/2
-            error = abs((xr-xrold)/xrold)
+            error = abs((xr-xrold)/xr) * 100
             condition = 1
         ! Check second condition of bisection method
         elseif ((f(xi)*f(xr)) > 0) then
             xi = xr
             xrold = xr
             xr = (xi+xf)/2
-            error = abs((xr-xrold)/xrold)
+            error = abs((xr-xrold)/xr) * 100
             condition = 2
         ! Check third condition of bisection method
         elseif (f(xi)*f(xr) == 0) then
@@ -77,7 +78,7 @@ open(20, file='bisection.txt', status='replace')
                 xr = xi
             endif
             xrold = xr
-            error = abs((xr-xrold)/xrold)
+            error = abs((xr-xrold)/xr) * 100
             condition = 3
         end if
         ! Do the netx iteration
@@ -85,7 +86,7 @@ open(20, file='bisection.txt', status='replace')
     end do
 close(20)
 call cpu_time(finish)
-print '("Time = ",f6.3," seconds.")',finish-start
+print '("Time = ",f12.8," seconds.")',finish-start
 end program
   
 function f(x)
