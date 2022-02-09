@@ -11,7 +11,7 @@ By using `xr`, check the condition:
 
 The process will stop when the f(xr) is close to 0.
 # Example
-Solve a equation of ![f(x) = x^2+2x+1](https://i.upmath.me/svg/f(x)%20%3D%20x%5E2%2B2x%2B1) to find root by using bisection method! As we know, this funtion has root of -1 (solving by factorization in mathematically). 
+Solve a equation of ![f(x) = x^2-2x+1](https://i.upmath.me/svg/x%5E2-2x%2B1) to find root by using bisection method! As we know, this funtion has root of -1 (solving by factorization in mathematically). 
 
 There are three parameters input:
  - Initial Boundary = -3
