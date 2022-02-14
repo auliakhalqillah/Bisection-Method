@@ -22,5 +22,5 @@ The program has been written for finding a roots of the function automatically. 
 To plot the result, you can use bisectionPlot.m file (Matlab). Finally, you can check the result in figure bisection.png 
 # Contact
 Email: auliakhalqillah.mail@gmail.com
-# Material Source
+# Reference
 [Julan Hernadi,2012,Matematika Numerik dengan Implementasi Matlab](http://andipublisher.com/produk-1012004497-matematika-numerik-dengan-implementasi-m.html)
